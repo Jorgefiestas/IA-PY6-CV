@@ -4,4 +4,4 @@
 - Martin Carrasco
 - Jorge Fiestas
 
-*Dataset:* git@github.com:Jorgefiestas/IA-PY6-CV.git
+*Dataset:* https://www.kaggle.com/omkargurav/face-mask-dataset
