@@ -21,7 +21,7 @@ import argparse
 import os
 
 INIT_LR = 1e-4
-EPOCHS = 20
+EPOCHS = 4
 BS = 32
 
 data = []
@@ -104,7 +104,7 @@ print(classification_report(testY.argmax(axis=1), predIdxs,
 	target_names=lb.classes_))
 # serialize the model to disk
 print("[INFO] saving mask detector model...")
-model.save(args["model"], save_format="h5")
+model.save('../models/nnet_mask', save_format="h5")
 
 # plot the training loss and accuracy
 N = EPOCHS
@@ -118,4 +118,4 @@ plt.title("Training Loss and Accuracy")
 plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
 plt.legend(loc="lower left")
-plt.savefig(args["plot"])
+plt.savefig('accuracy.png')
