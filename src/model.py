@@ -20,7 +20,6 @@ import numpy as np
 import argparse
 import os
 
-
 def load_data(base_path):
     data = []
     labels = []
