@@ -13,7 +13,7 @@ faceModel = '../models/deploy.protxt'
 faceWeights = '../models/res10_300x300_ssd_iter_140000.caffemodel'
 faceNet = cv2.dnn.readNet(faceModel, faceWeights)
 
-classify_model = load_model("../models/nnet_mask")
+classify_model = load_model("../models/model_cnn")
 cap = cv2.VideoCapture(0)
 
 while True:
@@ -29,7 +29,7 @@ while True:
         confidence = detections[0, 0, i, 2]
 
         # Check the detection threshold
-        if confidence < 0.9:
+        if confidence < 0.6:
                 continue
 
         # Finding the box that was detected

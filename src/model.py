@@ -20,6 +20,8 @@ import numpy as np
 import argparse
 import os
 
+EPOCHS = 20
+
 def load_data(base_path):
     data = []
     labels = []
@@ -85,7 +87,7 @@ def train_model(data, labels, EPOCHS = 1, BS = 32, LR=1e-4):
 
     f_idx = model.predict(X_test, batch_size=BS)
     f_idx = np.argmax(f_idx, axis = 1)
-    model.save("model_cnn", save_format="h5")
+    model.save("../models/model_cnn", save_format="h5")
     return fitted_model
 
 def plot_curve(model, N):
@@ -99,9 +101,9 @@ def plot_curve(model, N):
     plt.xlabel("Epoch #")
     plt.ylabel("Loss vs Accuracy")
     plt.legend(loc="lower left")
-    plt.savefig("learning_curve.png")
+    plt.savefig("../images/learning_curve.png")
 
 
 data, labels = load_data("../dataset/data/")
-fitted_model = train_model(data = data, labels = labels, EPOCHS = 5)
-plot_curve(fitted_model, N = 5)
+fitted_model = train_model(data = data, labels = labels, EPOCHS = EPOCHS)
+plot_curve(fitted_model, N = EPOCHS)
