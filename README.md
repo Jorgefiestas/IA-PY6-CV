@@ -4,6 +4,8 @@
 - Martin Carrasco
 - Jorge Fiestas
 
+** Please check the [Github Repo](https://github.com/Jorgefiestas/IA-PY6-CV)**
+
 ## Introduction
 
 In this proyect we implemented a live mask recognition software that works with the webcam using OpenCV and TensorFlow. For the recognition of the faces in the webcam we used a pretrained openCV classifier to detect faces. Then we trained CNN model to classify masked and unmasked faces. We run each of the faces detected through this model in order to differentiate masked and unmasked faces.
